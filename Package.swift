@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "MapLibre Native",
+    name: "MapMetrics Native",
     products: [
         .library(
             name: "MapMetrics",
