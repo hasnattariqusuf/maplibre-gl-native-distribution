@@ -5,15 +5,14 @@ let package = Package(
     name: "MapLibre Native",
     products: [
         .library(
-            name: "MapLibre",
-            targets: ["MapLibre"])
+            name: "MapMetrics",
+            targets: ["MapMetrics"])
     ],
     dependencies: [
     ],    
     targets: [
         .binaryTarget(
-            name: "MapLibre",
-            url: "https://github.com/maplibre/maplibre-native/releases/download/ios-v6.12.3/MapLibre.dynamic.xcframework.zip",
-            checksum: "5008c501dc005ef06fe932c7bd61de921faa705771a9be59196688512e7e5165")
+            name: "MapMetrics",
+            url: "https://github.com/MapMetrics/MapMetrics-iOS/raw/refs/heads/main/MapMetrics.zip")
     ]
 )
