@@ -1,18 +1,28 @@
 // swift-tools-version:5.3
+// swift-tools-version:5.6
 import PackageDescription
 
 let package = Package(
-    name: "MapMetrics Native",
+    name: "MapMetrics",
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
         .library(
             name: "MapMetrics",
-            targets: ["MapMetrics"])
+            targets: ["MapMetricsWrapper"]
+        ),
     ],
-    dependencies: [
-    ],    
     targets: [
         .binaryTarget(
             name: "MapMetrics",
-            url: "https://github.com/MapMetrics/MapMetrics-iOS/raw/refs/heads/main/MapMetrics.zip")
+            path: "./MapMetrics.xcframework"
+        ),
+        .target(
+            name: "MapMetricsWrapper",
+            dependencies: ["MapMetrics"],
+            path: "Sources/MapMetricsWrapper",
+            publicHeadersPath: "."
+        )
     ]
 )
